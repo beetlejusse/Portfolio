@@ -21,8 +21,8 @@ export const Vortex = (props: VortexProps) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const containerRef = useRef(null);
 
-  // Adjust particle count based on screen size
-  let particleCount = Math.max(50, Math.floor(window.innerWidth / 15));
+  // Adjust particle count based on screen size (moderate quantity)
+  let particleCount = Math.max(100, Math.floor(window.innerWidth / 10));
   const particlePropCount = 9;
   const particlePropsLength = particleCount * particlePropCount;
 
@@ -33,8 +33,8 @@ export const Vortex = (props: VortexProps) => {
   const rangeSpeed = props.rangeSpeed || 1.5;
   const baseRadius = props.baseRadius || 1;
   const rangeRadius = props.rangeRadius || 2;
-  const baseHue = 120; // Set to green hue
-  const rangeHue = 0; // No hue variation
+  const baseHue = 170; // Set between green and blue
+  const rangeHue = 30; // Allow variation between greenish-blue hues
   const noiseSteps = 3;
   const xOff = 0.00125;
   const yOff = 0.00125;

@@ -22,7 +22,7 @@ export const Vortex = (props: VortexProps) => {
   const containerRef = useRef(null);
 
   // Adjust particle count based on screen size (moderate quantity)
-  let particleCount = Math.max(100, Math.floor(window.innerWidth / 10));
+  let particleCount = 200;
   const particlePropCount = 9;
   const particlePropsLength = particleCount * particlePropCount;
 

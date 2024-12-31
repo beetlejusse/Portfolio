@@ -1,23 +1,24 @@
 "use client";
 
 import React from "react";
+import Image from 'next/image';
 
 export const DockInfo = () => {
   // Fetch links from environment variables
   const links = [
     {
       title: "GitHub",
-      icon: <img src="https://skillicons.dev/icons?i=github" alt="GitHub Icon" />,
+      icon: <Image src="https://skillicons.dev/icons?i=github" alt="GitHub Icon" />,
       href: process.env.NEXT_PUBLIC_GITHUB_LINK || "#",
     },
     {
       title: "X",
-      icon: <img src="https://skillicons.dev/icons?i=twitter" alt="X Icon" />,
+      icon: <Image src="https://skillicons.dev/icons?i=twitter" alt="X Icon" />,
       href: process.env.NEXT_PUBLIC_X_LINK || "#",
     },
     {
       title: "LinkedIn",
-      icon: <img src="https://skillicons.dev/icons?i=linkedin" alt="LinkedIn Icon" />,
+      icon: <Image src="https://skillicons.dev/icons?i=linkedin" alt="LinkedIn Icon" />,
       href: process.env.NEXT_PUBLIC_LINKEDIN_LINK || "#",
     },
   ];

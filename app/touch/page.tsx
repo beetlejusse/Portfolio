@@ -21,7 +21,7 @@ export default function TouchPage() {
 
   useEffect(() => {
     setCurrentURL(window.location.href);
-  });
+  }, []);
   return (
     <>
       <Navbar />

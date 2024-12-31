@@ -6,12 +6,6 @@ import { FlipWords } from "../ui/flip-words";
 import { VelocityScroll } from "../ui/scroll-based-velocity";
 import { InfoPage } from "./Info";
 
-const oswaldFont = Oswald({
-  weight: ["700"],
-  subsets: ["latin"],
-  variable: "--font-oswald",
-});
-
 export const AboutPage = () => {
   const words = ["About Me", "what am i cooking?"];
   return (

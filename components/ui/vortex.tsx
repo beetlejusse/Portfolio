@@ -22,7 +22,7 @@ export const Vortex = (props: VortexProps) => {
   const containerRef = useRef(null);
 
   // Adjust particle count based on screen size (moderate quantity)
-  let particleCount = 200;
+  const particleCount = 200;
   const particlePropCount = 9;
   const particlePropsLength = particleCount * particlePropCount;
 
@@ -44,14 +44,14 @@ export const Vortex = (props: VortexProps) => {
   let tick = 0;
   const noise3D = createNoise3D();
   let particleProps = new Float32Array(particlePropsLength);
-  let center: [number, number] = [0, 0];
+  const center: [number, number] = [0, 0];
 
   const TAU: number = 2 * Math.PI;
 
   const rand = (n: number): number => n * Math.random();
   const randRange = (n: number): number => n - rand(2 * n);
   const fadeInOut = (t: number, m: number): number => {
-    let hm = 0.5 * m;
+    const hm = 0.5 * m;
     return Math.abs(((t + hm) % m) - hm) / hm;
   };
   const lerp = (n1: number, n2: number, speed: number): number =>
@@ -61,7 +61,7 @@ export const Vortex = (props: VortexProps) => {
     const canvas = canvasRef.current;
     const container = containerRef.current;
     if (canvas && container) {
-      const ctx = canvas.getContext("2d");
+      let ctx = canvas.getContext("2d");
 
       if (ctx) {
         resize(canvas, ctx);
@@ -84,7 +84,7 @@ export const Vortex = (props: VortexProps) => {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    let x, y, vx, vy, life, ttl, speed, radius, hue;
+    var x, y, vx, vy, life, ttl, speed, radius, hue;
 
     x = rand(canvas.width);
     y = center[1] + randRange(rangeY);
@@ -120,7 +120,7 @@ export const Vortex = (props: VortexProps) => {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    let i2 = 1 + i,
+    var i2 = 1 + i,
       i3 = 2 + i,
       i4 = 3 + i,
       i5 = 4 + i,
@@ -128,7 +128,7 @@ export const Vortex = (props: VortexProps) => {
       i7 = 6 + i,
       i8 = 7 + i,
       i9 = 8 + i;
-    let n, x, y, vx, vy, life, ttl, speed, x2, y2, radius, hue;
+    var n, x, y, vx, vy, life, ttl, speed, x2, y2, radius, hue;
 
     x = particleProps[i];
     y = particleProps[i2];

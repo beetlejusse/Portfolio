@@ -1,5 +1,4 @@
 "use client";
-import { Oswald } from "@next/font/google";
 import { motion } from "framer-motion";
 import { LampContainer } from "../ui/lamp";
 import { FlipWords } from "../ui/flip-words";

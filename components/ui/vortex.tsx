@@ -284,7 +284,7 @@ export const Vortex: React.FC<VortexProps> = (props) => {
   const lerp = (n1: number, n2: number, speed: number): number =>
     (1 - speed) * n1 + speed * n2;
 
-  const resize = useCallback((canvas: HTMLCanvasElement, ctx?: CanvasRenderingContext2D) => {
+  const resize = useCallback((canvas: HTMLCanvasElement, _ctx?: CanvasRenderingContext2D) => {
     const { innerWidth, innerHeight } = window;
 
     canvas.width = innerWidth;
@@ -358,8 +358,8 @@ export const Vortex: React.FC<VortexProps> = (props) => {
       i7 = 6 + i,
       i8 = 7 + i,
       i9 = 8 + i;
-    let x = particleProps[i];
-    let y = particleProps[i2];
+    const x = particleProps[i];
+    const y = particleProps[i2];
     const n = noise3D(x * xOff, y * yOff, tick * zOff) * noiseSteps * TAU;
     const vx = lerp(particleProps[i3], Math.cos(n), 0.5);
     const vy = lerp(particleProps[i4], Math.sin(n), 0.5);

@@ -4,7 +4,7 @@ import { createNoise3D } from "simplex-noise";
 import { motion } from "framer-motion";
 
 interface VortexProps {
-  children?: any;
+  children: any;
   className?: string;
   containerClassName?: string;
   particleCount?: number;
@@ -84,7 +84,7 @@ export const Vortex = (props: VortexProps) => {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    var x, y, vx, vy, life, ttl, speed, radius, hue;
+    let x, y, vx, vy, life, ttl, speed, radius, hue;
 
     x = rand(canvas.width);
     y = center[1] + randRange(rangeY);
@@ -120,7 +120,7 @@ export const Vortex = (props: VortexProps) => {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    var i2 = 1 + i,
+    let i2 = 1 + i,
       i3 = 2 + i,
       i4 = 3 + i,
       i5 = 4 + i,
@@ -128,7 +128,7 @@ export const Vortex = (props: VortexProps) => {
       i7 = 6 + i,
       i8 = 7 + i,
       i9 = 8 + i;
-    var n, x, y, vx, vy, life, ttl, speed, x2, y2, radius, hue;
+    let n, x, y, vx, vy, life, ttl, speed, x2, y2, radius, hue;
 
     x = particleProps[i];
     y = particleProps[i2];
@@ -153,7 +153,10 @@ export const Vortex = (props: VortexProps) => {
     particleProps[i4] = vy;
     particleProps[i5] = life;
 
-    (checkBounds(x, y, canvas) || life > ttl) && initParticle(i);
+    // (checkBounds(x, y, canvas) || life > ttl) && initParticle(i);
+    if (checkBounds(x, y, canvas) || life > ttl) {
+      initParticle(i);
+    }
   };
 
   const drawParticle = (

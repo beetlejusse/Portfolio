@@ -61,7 +61,7 @@ export const Vortex = (props: VortexProps) => {
     const canvas = canvasRef.current;
     const container = containerRef.current;
     if (canvas && container) {
-      let ctx = canvas.getContext("2d");
+      const ctx = canvas.getContext("2d");
 
       if (ctx) {
         resize(canvas, ctx);
@@ -84,7 +84,7 @@ export const Vortex = (props: VortexProps) => {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    let x, y, vx, vy, life, ttl, speed, radius, hue;
+    var x, y, vx, vy, life, ttl, speed, radius, hue;
 
     x = rand(canvas.width);
     y = center[1] + randRange(rangeY);
@@ -120,7 +120,7 @@ export const Vortex = (props: VortexProps) => {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    const i2 = 1 + i,
+    var i2 = 1 + i,
       i3 = 2 + i,
       i4 = 3 + i,
       i5 = 4 + i,
@@ -128,7 +128,7 @@ export const Vortex = (props: VortexProps) => {
       i7 = 6 + i,
       i8 = 7 + i,
       i9 = 8 + i;
-    let n, x, y, vx, vy, life, ttl, speed, x2, y2, radius, hue;
+    var n, x, y, vx, vy, life, ttl, speed, x2, y2, radius, hue;
 
     x = particleProps[i];
     y = particleProps[i2];
